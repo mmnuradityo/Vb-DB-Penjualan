@@ -73,8 +73,8 @@ Public Class ClsCtlBarang : Implements InfProses
         data = Ob
         CMD = New OleDbCommand("update barang set nama_barang='" _
                                 & data.namaBarang & "',harga_satuan=" & data.hargaBarang _
-                                & ",stok=" & data.stokBarang _
-                                & "where kode_barang='" & data.kodeBarang & "'", BUKAKONEKSI)
+                                & ",stock=" & data.stokBarang _
+                                & " where kode_barang='" & data.kodeBarang & "'", BUKAKONEKSI)
         CMD.CommandType = CommandType.Text
         CMD.ExecuteNonQuery()
         CMD = New OleDbCommand("", TUTUPKONEKSI)

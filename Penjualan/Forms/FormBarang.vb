@@ -7,8 +7,8 @@
         BtnTambah.Enabled = st
         BtnUbah.Enabled = st
         BtnHapus.Enabled = st
-        BtnSimpan.Enabled = st
-        BtnBatal.Enabled = st
+        BtnSimpan.Enabled = Not st
+        BtnBatal.Enabled = Not st
 
         GroupBox1.Enabled = Not st
         GroupBox3.Enabled = st
@@ -158,14 +158,14 @@
 
     Private Sub BtnNaik_Click(sender As Object, e As EventArgs) Handles BtnNaik.Click
         DGBarang.ClearSelection()
-        If baris > 0 Then baris = baris - 1
+        If baris < DTGrid.Rows.Count - 1 Then baris = baris + 1
         DGBarang.Rows(baris).Selected = True
         IsiBox(baris)
     End Sub
 
     Private Sub BtnTurun_Click(sender As Object, e As EventArgs) Handles BtnTurun.Click
         DGBarang.ClearSelection()
-        If baris < DTGrid.Rows.Count - 1 Then baris = baris + 1
+        If baris > 0 Then baris = baris - 1
         DGBarang.Rows(baris).Selected = True
         IsiBox(baris)
     End Sub
